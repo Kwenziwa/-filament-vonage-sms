@@ -1,6 +1,6 @@
 <?php
 
-namespace YourUsername\FilamentVonageSms;
+namespace kwenziwa\FilamentVonageSms;
 
 use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Assets\Asset;
@@ -11,7 +11,7 @@ use Filament\Support\Facades\FilamentIcon;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use YourUsername\FilamentVonageSms\Resources\SmsResource;
+use kwenziwa\FilamentVonageSms\Resources\SmsResource;
 
 class FilamentVonageSmsServiceProvider extends PackageServiceProvider
 {
@@ -25,12 +25,12 @@ class FilamentVonageSmsServiceProvider extends PackageServiceProvider
             ->hasViews()
             ->hasTranslations()
             ->hasMigration('create_filament-vonage-sms_table')
-            ->hasInstallCommand(function(InstallCommand $command) {
+            ->hasInstallCommand(function (InstallCommand $command) {
                 $command
                     ->publishConfigFile()
                     ->publishMigrations()
                     ->askToRunMigrations()
-                    ->askToStarRepoOnGitHub('yourusername/filament-vonage-sms');
+                    ->askToStarRepoOnGitHub('kwenziwa/filament-vonage-sms');
             });
     }
 

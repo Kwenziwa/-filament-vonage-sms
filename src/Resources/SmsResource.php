@@ -1,14 +1,14 @@
 <?php
 
-namespace YourUsername\FilamentVonageSms\Resources;
+namespace kwenziwa\FilamentVonageSms\Resources;
 
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use YourUsername\FilamentVonageSms\Resources\SmsResource\Pages;
-use YourUsername\FilamentVonageSms\Actions\SendSmsAction;
+use kwenziwa\FilamentVonageSms\Resources\SmsResource\Pages;
+use kwenziwa\FilamentVonageSms\Actions\SendSmsAction;
 
 class SmsResource extends Resource
 {

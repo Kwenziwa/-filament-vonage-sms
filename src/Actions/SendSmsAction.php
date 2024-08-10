@@ -1,6 +1,6 @@
 <?php
 
-namespace YourUsername\FilamentVonageSms\Actions;
+namespace kwenziwa\FilamentVonageSms\Actions;
 
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;

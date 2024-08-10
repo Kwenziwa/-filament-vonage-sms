@@ -1,10 +1,10 @@
 <?php
 
-namespace YourUsername\FilamentVonageSms\Resources\SmsResource\Pages;
+namespace kwenziwa\FilamentVonageSms\Resources\SmsResource\Pages;
 
 use Filament\Resources\Pages\ListRecords;
-use YourUsername\FilamentVonageSms\Resources\SmsResource;
-use YourUsername\FilamentVonageSms\Actions\SendSmsAction;
+use kwenziwa\FilamentVonageSms\Resources\SmsResource;
+use kwenziwa\FilamentVonageSms\Actions\SendSmsAction;
 
 class ListSms extends ListRecords
 {

@@ -13,4 +13,4 @@ A Filament 3 plugin for sending SMS messages using Vonage (formerly Nexmo), supp
 You can install the package via composer:
 
 ```bash
-composer require yourusername/filament-vonage-sms
+composer require kwenziwa/filament-vonage-sms
