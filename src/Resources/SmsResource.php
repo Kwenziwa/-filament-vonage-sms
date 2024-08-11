@@ -3,16 +3,16 @@
 namespace kwenziwa\FilamentVonageSms\Resources;
 
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Resources\Resource;
+use kwenziwa\FilamentVonageSms\Models\Sms;
 use kwenziwa\FilamentVonageSms\Resources\SmsResource\Pages;
-use kwenziwa\FilamentVonageSms\Actions\SendSmsAction;
 
 class SmsResource extends Resource
 {
-    protected static ?string $model = null;
+    protected static ?string $model = Sms::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-envelope';
 
@@ -22,10 +22,10 @@ class SmsResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('user_id')
+                Forms\Components\Select::make('recipient')
                     ->label('Recipient')
                     ->options(function () {
-                        return config('filament-vonage-sms.user_model')::pluck('name', 'id');
+                        return config('filament-vonage-sms.user_model')::pluck('name', 'phone');
                     })
                     ->searchable()
                     ->required(),
@@ -40,14 +40,16 @@ class SmsResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')->searchable(),
-                Tables\Columns\TextColumn::make('phone')->searchable(),
+                Tables\Columns\TextColumn::make('recipient')->searchable(),
+                Tables\Columns\TextColumn::make('message')->limit(50),
+                Tables\Columns\TextColumn::make('status'),
+                Tables\Columns\TextColumn::make('created_at')->dateTime(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                SendSmsAction::make(),
+                // You can add view or delete actions here if needed
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
