@@ -24,7 +24,7 @@ class FilamentVonageSmsServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->hasViews()
             ->hasTranslations()
-            ->hasMigration('create_sms_table')
+            ->hasMigration('2024_08_11_025446_create_sms_table')
             ->hasInstallCommand(function (InstallCommand $command) {
                 $command
                     ->publishConfigFile()
